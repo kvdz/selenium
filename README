@@ -1,0 +1,32 @@
+This program is a unit test for www.hudl.com.
+
+In order to run this you need to manually fill in the web drivers paths and login credentials.
+These has been removed because of privacy reasons.
+
+Package needed:
+- selenium, can use "pip install selenium".
+- unittest is part of python.
+
+How to run it?
+    Python main.py
+
+What to improve when more time:
+- Make use of multiple browsers by using factory design pattern.
+  This prevents duplicating the unit tests. I would also includes a way to run on all browsers supported by OS and specific when called.
+
+- Improve run time, currently some sleeps where added to see the result. In automated test this is not necessary.
+  Also not opening the browser and closing it on each test can reduce test time, by not using a new driver every set up of the unit test.
+
+- Use a global variable for the website url and only add the additional paths for specific test.
+  When you want to test it on another running instance of the website you could easily perform the same test on that other instance.
+
+- Expand the unit test with more bad use cases, for example:
+   - login brute forcing and other security tests.
+   - page transition testing: main page to login to home page, home page to upload and do an upload.
+   - and some more on the home page.
+
+- I would use a development/local version of the website, not the live one like I did now.
+  When it does crash with a test you catch it without users experience down time.
+  This development/local version of the website can be used to end user test beta/new features.
+  It would be a challenge for all QA'er to break it. When someone breaks it, he deserves a reward/praise.
+
